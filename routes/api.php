@@ -2,8 +2,13 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 use App\Http\Controllers\UserController;
 
+=======
+use phpDocumentor\Reflection\Types\Resource_;
+use App\Http\Controllers\ProdutoController;
+>>>>>>> semear
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +46,4 @@ Route::get('naoAutorizado', function () {
     return 'Não autorizado!';
 })->name('naoAutorizado');
 
+Route::resource('/produto', ProdutoController::class);
