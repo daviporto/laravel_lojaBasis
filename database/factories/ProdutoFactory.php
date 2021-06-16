@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\produto;
+use App\Models\Produto;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class ProdutoFactory extends Factory
 {
@@ -22,7 +23,11 @@ class ProdutoFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nome' => explode(' ', $this->faker->name())[1],
+            'descricao' => $this->faker->text(),
+            'quantidade_estoque' => rand(10,1000),
+            'preco' => rand(0, 1000),
+    
         ];
     }
 }
