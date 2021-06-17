@@ -2,13 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
 use App\Http\Controllers\UserController;
 
-=======
 use phpDocumentor\Reflection\Types\Resource_;
 use App\Http\Controllers\ProdutoController;
->>>>>>> semear
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +22,7 @@ use App\Http\Controllers\ProdutoController;
 //     return $request->user();
 // });
 
-Route::resource('/user', UserController::class);
+
 
 Route::group([
 
@@ -39,6 +36,8 @@ Route::group([
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
+    Route::post('finalizarCompra', 'VendaController@store');
+    Route::post('meusPedidos', 'VendaController@meusPedidos');
 
 });
 
@@ -47,3 +46,4 @@ Route::get('naoAutorizado', function () {
 })->name('naoAutorizado');
 
 Route::resource('/produto', ProdutoController::class);
+Route::resource('/user', UserController::class);

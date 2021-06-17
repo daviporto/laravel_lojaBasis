@@ -19,7 +19,7 @@ class CreateVendaProdutosTable extends Migration
             $table->foreign('produto_id')->references('id')->on('produtos');
             $table->unsignedBigInteger('venda_id');
             $table->foreign('venda_id')->references('id')->on('vendas');
-            $table->integer('quantidade');
+            $table->integer('quantidade')->default(1);
             $table->timestamps();
         });
     }

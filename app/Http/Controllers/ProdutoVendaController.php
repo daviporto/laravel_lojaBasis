@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Venda;
+use App\Models\ProdutoVenda;
 use Illuminate\Http\Request;
 
-class VendaController extends Controller
+class ProdutoVendaController extends Controller
 {
-    function __construct(Venda $venda)
+    function __construct(ProdutoVenda $produto)
     {
-        $this->vendaModel = $venda;
+        $this->ProdutoVendaModel = $produto;
     }
     
     /**
@@ -19,14 +19,9 @@ class VendaController extends Controller
      */
     public function index()
     {
-        return $this->vendaModel->getPedidos();
+        return $this->ProdutoVendaModel->getPedidos();
     }
 
-    public function meusPedidos()
-    {
-        return Venda::getPedidos();
-    }
-    
     /**
      * Show the form for creating a new resource.
      *
@@ -45,7 +40,7 @@ class VendaController extends Controller
      */
     public function store(Request $request)
     {
-        return Venda::finalizarCompra($request->all());
+        //
     }
 
     /**

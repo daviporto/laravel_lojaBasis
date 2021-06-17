@@ -14,17 +14,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(15)->create();
         \App\Models\Produto::factory(100)->create();
 
 
-        // $statuses = ['aguardando pagamento', 'preparando para envia', 'enviado', 'entregue'];
+        $statuses = ['aguardando pagamento', 'preparando para envia', 'enviado', 'entregue'];
 
-        // foreach($statuses as $s){
-        //     DB::table('statuses')->insert([
-        //         'descricao'=>  $s
-        //     ]);
-        // }
+        foreach($statuses as $s){
+            DB::table('statuses')->insert([
+                'descricao'=>  $s
+            ]);
+        }
       
     }
 

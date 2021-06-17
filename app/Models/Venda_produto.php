@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class venda extends Model
+class Venda_produto extends Model
 {
     use HasFactory;
+    // protected $table = nome correto da tabela no banco
 
     protected $fillable = [
-        'pedido',
         'user_id',
         'status_id',
     ];

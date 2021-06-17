@@ -15,4 +15,8 @@ class Produto extends Model
         'preco',
         'quantidade_estoque'
     ];
+    public function getPedidos()
+    {
+        return response()->json($this->hasMany(ProdutoVenda::class));
+    }
 }

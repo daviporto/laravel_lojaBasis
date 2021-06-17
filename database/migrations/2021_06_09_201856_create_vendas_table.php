@@ -13,14 +13,17 @@ class CreateVendasTable extends Migration
      */
     public function up()
     {
-        Schema::create('vendas', function (Blueprint $table) {
+           Schema::create('vendas', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('pedido');
+            
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->float('valor_total', 8, 2);
             $table->unsignedBigInteger('status_id');
-            $table->foreign('status_id')->references('id')->on('statuses');
+            $table->foreign('status_id')->references('id')->on('statuses');            
+            
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
